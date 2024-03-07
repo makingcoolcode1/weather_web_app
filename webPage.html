@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Weather!</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: aqua;
+        }
+
+        #weather-container{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Weather:</h1>
+    <input type="text" id="city-input" placeholder="Enter City Name">
+    <button onclick="getWeather()">Get Weather</button>
+    
+    <div id="weather-container"></div>
+
+    <script src="ui.js"></script>
+
+</body>
