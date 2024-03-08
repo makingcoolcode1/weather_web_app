@@ -1,37 +1,46 @@
 
+
 function getWeather() {
-    const apiKey = "df9f6adc7d89e0757fdee3c72ae7b5eb"
-    const citySearch = document.getElementById("city-input").value
+    const apiKey = document.getElementById("apiKeyInput").value
+    const citySearch = document.getElementById("city-search").value;
+    const spinner = document.getElementById("spinner");
+    const weatherContainer = document.getElementById("weather-container");
+    
+    spinner.style.display = "block";
+    weatherContainer.innerHTML = "";
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&appid=${apiKey}&units=metric`)
-    .then (result=> {
-        if (!result.ok) {
-            alert("ERROR! Cannot connect to API")
-            throw new error("ERROR")
-            
-        }
+    setTimeout(() => {
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&appid=${apiKey}&units=metric`)
+        .then (result => {
+            if (!result.ok) {
+                alert("ERROR! Unable to connect to API")
+                
+            }
+            return result.json()
+        })
+        .then (weatherData => {
 
-        return result.json()
-    })
-    .then(data => {
+            const weatherDescription = weatherData.weather[0].description;
+            const weatherTemp = weatherData.main.temp;
+            const weatherHumudity = weatherData.main.humidity
 
-        const getDescription = data.weather[0].description;
-        const getTemp = data.main.temp;
-        const getHumidity = data.main.humidity;
+            spinner.style
 
-        document.getElementById("weather-container").innerHTML = `
-            <h2>Weather in ${citySearch}</h2>
-            <p>Description: ${getDescription}</p>
-            <p>Temperature: ${getTemp}</p>
-            <p>Humidity: ${getHumidity}</p
-            
-        `;
-    })
+            document.getElementById("weather-container").innerHTML = `
+                <h2>Current weather in ${citySearch}</h2>
+                <p>Description: ${weatherDescription}</p>
+                <p>Temperature: ${weatherTemp}<p>
+                Humidity: ${weatherHumudity}<p>
+                    
+                `;
 
-    .catch(error => {
-        console.error("Error fetching weather data", error)
-        document.getElementById("weather-constainer").innerHTML = `<p> Eerror fetching weather data</p>`
-    });
-
-
+                spinner.style.display = "none";
+        })
+        .catch (error => {
+            console.error("ERROR Finding weather!", error)
+            document.getElementById('weather-container').innerHTML = `<p> ERROR: Unable to fund weather<p>`
+            alert("ERROR: Unable to find weather for city")
+        })
+    
+    }, 2000);
 }
