@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-    <title>Weather!</title>
+    <meta charset = "UTF-*">
+    <meta name = "viewpoint", content = "width = device-width, initial-scale=1.0">
+    <title>Weather</title>
     <link rel="stylesheet" href="spinner.css">
     <style>
         body {
@@ -13,26 +13,22 @@
         }
 
         #weather-container{
-            margin-top: 20px;
+            margin-top: 20px ;
         }
     </style>
 </head>
 <body>
-    <div id = "apiModal" class="api-modal">
-        <div class ="model-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <p>Please enter your API key:</p>
-            <input type="text" id="apiKeyInput" placeholder="Enter API Key">
-            <button onclick="storeApiKey()">Save</button>
-        </div>
+    <div id="api-modal" class="api-modal">
+        <p>Please enter your api key:</p>
+        <input type="text" id="apiKeyInput" placeholder="Api Key">
+        <button onclick="storeApiKey()">Save</button>
     </div>
-    <h1>Search Weather:</h1>
-    <input type="text" id="city-search" placeholder="Enter City Name">
-    <button onclick="getWeather()">Get Weather</button>
-    <div class="spinner" id="spinner"></div>
-    <div id="weather-container"></div>
-
+    <div>
+        <h1>Search Weather:</h1>
+        <input type="text" id="city-search" placeholder="Enter City Name">
+        <button onclick="getWeather()">Search Weather</button>
+        <div id="weather-container"></div>
+    </div>
     <script src="apiPrompt.js"></script>
     <script src="ui.js"></script>
-
 </body>
