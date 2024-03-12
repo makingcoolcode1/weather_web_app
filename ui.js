@@ -30,5 +30,11 @@ function getWeather() {
         console.error(error)
     });
 
+}
 
+function handleKeyPress(event) {
+    console.log("Key Pressed", event.key)
+    if (event.key === 'Enter') {
+        getWeather();
+    }
 }
