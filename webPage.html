@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="mainview" content="width=device-width, initial-scalr=1.0">
-    <title>Weather Search!</title> 
+    <meta charset="UTF=8">
+    <meta viewpoint = "mainview, width = device-width">
+    <title>Weather Search </title>
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
@@ -14,7 +14,7 @@
             background-color: aqua;
         }
 
-        #weather-container {
+        #weather-container{
             margin-top: 20px;
         }
     </style>
@@ -22,17 +22,19 @@
 <body>
     <div>
         <div id="api-modal" class="api-modal">
-        <p>Enter Your API Key:</p>
-        <input type="text" id="saveApiKey" placeholder="Enter API Key">
+        <p>Enter API Key</p>
+        <input type="text" id="api-key" placeholder="Enter API Key">
         <button onclick="storeApiKey()">Save</button>
     </div>
     <div>
         <h2>Enter a City:</h2>
-        <input type="text" id="city-search" placeholder="Enter a City">
-        <button onclick="getWeather()">Search</button>
+        <input type="text" id ="city-search" placeholder="Enter a city" onkeypress="enterSearch(event)">
+        <button onclick="getWeather()">Search City</button>
         <div id="weather-container"></div>
     </div>
+
     <script src="apiPrompt.js"></script>
     <script src="ui.js"></script>
-
 </body>
+
+
