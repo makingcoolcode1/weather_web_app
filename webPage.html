@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta viewpoint = "width = device-width, initial-scale = 1.0">
     <title>Weather Search</title>
+    <link rel="stylesheet" href="spinner.css">
 </head>
 <style>
     body{
@@ -25,6 +26,7 @@
             <h1>Enter a city</h1>
             <input type="text" id="city-search" placeholder="City">
             <button onclick="getWeather()">Search</button>
+            <div class="spinner" id="spinner"></div>
             <div id="weather-output"></div>
             
         </div>
