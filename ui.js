@@ -1,40 +1,35 @@
 
-function getWeather() {
-    const apiKey = document.getElementById("apiKeyInput").value;
+function getWeather(){
+    const apiKey = document.getElementById("api-key").value;
     const citySearch = document.getElementById("city-search").value;
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&appid=${apiKey}&units=metric`)
-    .then (weatherResult => {
+    .then(weatherResult => {
         if (!weatherResult.ok) {
-            console.error(error)
+            console.error()
+            alert("ERROR: Unable to connect to API!")
         }
+
         return weatherResult.json()
+
     })
     .then(weatherData => {
-
+        
         const weatherDescription = weatherData.weather[0].description;
-        var weatherTemp = weatherData.main.temp;
-        var weatherFehrenheit = (weatherTemp * (9/5) + 32 );
-        const weatherHumidity = weatherData.main.humidity;
+        const weatherTemp = weatherData.main.temp;
+        const weatherHumdity = weatherData.main.humidity;
 
-        document.getElementById("weather-container").innerHTML = `
-            <h2>Weather in ${citySearch}</h2>
-            <p>Description: ${weatherDescription}</p>
-            <p>Temperature: ${weatherFehrenheit}</p>
-            <p>Humidity: ${weatherHumidity}</p>
-
-            `;
+        document.getElementById("weather-output").innerHTML = `
+        <h2>Weather in ${citySearch}</h2>
+        <p>Description: ${weatherDescription}</p>
+        <p>Temperature: ${weatherTemp}</p>
+        <p>Humidity: ${weatherHumdity}</p>
+        `;
     })
     .catch(error => {
-        document.getElementById("weather-container").innerHTML = `<p>ERROR, Unable to find city!</p>`
+        document.getElementById("weather-output").innerHTML = `<p>ERROR: Unable to find city....Please enter another city.<p>`
         console.error(error)
-    });
+        alert("ERROR: City not found")
+    })
 
-}
-
-function handleKeyPress(event) {
-    console.log("Key Pressed", event.key)
-    if (event.key === 'Enter') {
-        getWeather();
-    }
 }

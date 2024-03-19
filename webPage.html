@@ -1,40 +1,34 @@
 
 <!DOCTYPE html>
-
 <head>
-    <meta charset="UTF=8">
-    <meta viewpoint = "mainview, width = device-width">
-    <title>Weather Search </title>
-    <style>
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: aqua;
-        }
-
-        #weather-container{
-            margin-top: 20px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta viewpoint = "width = device-width, initial-scale = 1.0">
+    <title>Weather Search</title>
 </head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 0%;
+        width: auto;
+        text-align: center;
+        background-color: aqua;
+    }
+</style>
 <body>
     <div>
-        <div id="api-modal" class="api-modal">
-        <p>Enter API Key</p>
-        <input type="text" id="api-key" placeholder="Enter API Key">
-        <button onclick="storeApiKey()">Save</button>
+        <div id="api-modal">
+            <p>Enter your API Key from openweatherapi.com</p>
+            <input type="text" id="api-key" placeholder="Enter API Key">
+            <button onclick="storeApiKey()">Save</button>
+        </div>
+        <div>
+            <h1>Enter a city</h1>
+            <input type="text" id="city-search" placeholder="City">
+            <button onclick="getWeather()">Search</button>
+            <div id="weather-output"></div>
+            
+        </div>
     </div>
-    <div>
-        <h2>Enter a City:</h2>
-        <input type="text" id ="city-search" placeholder="Enter a city" onkeypress="enterSearch(event)">
-        <button onclick="getWeather()">Search City</button>
-        <div id="weather-container"></div>
-    </div>
-
     <script src="apiPrompt.js"></script>
     <script src="ui.js"></script>
 </body>
-
-
