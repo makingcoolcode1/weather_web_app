@@ -1,36 +1,61 @@
 
 <!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta viewpoint = "width = device-width, initial-scale = 1.0">
-    <title>Weather Search</title>
-    <link rel="stylesheet" href="spinner.css">
-</head>
-<style>
-    body{
-        font-family: Arial, Helvetica, sans-serif;
-        padding: 0%;
-        width: auto;
-        text-align: center;
-        background-color: aqua;
-    }
-</style>
-<body>
-    <div>
-        <div id="api-modal">
-            <p>Enter your API Key from openweatherapi.com</p>
-            <input type="text" id="api-key" placeholder="Enter API Key">
-            <button onclick="storeApiKey()">Save</button>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
+        <title>Weather Search</title>
+    </head>
+    <style>
+        body {
+            position: relative;
+            
+        }
+
+        #heading-container{
+            position: relative;
+            width: 100%;
+            background-color: aqua;
+            text-align: center;
+            transform: translateY(-60%);
+            
+
+        }
+
+        #api-ask-container{
+            position: relative;
+            text-align: center;
+            transform: translateY(-70%);
+            font-size: x-large
+        }
+
+        #api-key-entry{
+            position: relative;
+            text-align: center;
+            position: relative;
+
+        }
+
+        #api-enter-btn{
+            position: relative;
+            text-align: center;
+        }
+
+
+    </style>
+    <body>
+        <div class="container mt-5" id="heading-container">
+            <h1 id="heading">WEB PAGE TEST:</h1>
+        </div>
+        <div class="container" id="api-ask-container">
+            <p>Enter your API Key<p>
+        </div>
+        <div class="container" id="api-key-entry">
+        <input type="text" placeholder="API KEY">
         </div>
         <div>
-            <h1>Enter a city</h1>
-            <input type="text" id="city-search" placeholder="City">
-            <button onclick="getWeather()">Search</button>
-            <div class="spinner" id="spinner"></div>
-            <div id="weather-output"></div>
-            
+            <button type="button" class="btn btn-primary" id="api-enter-btn">Save</button>
         </div>
-    </div>
-    <script src="apiPrompt.js"></script>
-    <script src="ui.js"></script>
-</body>
+    </body>
+</html>
