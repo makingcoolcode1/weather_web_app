@@ -2,51 +2,69 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport", content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
-        <title>Weather Search</title>
+        <title>API KEY VALIDATION</title>
     </head>
     <style>
 
         #main-heading-container{
             position: relative;
-            transform: translateY(20%);
-            background-color: aquamarine;
             text-align: center;
-            width: 50%
-            fit-content 
+            background-color: antiquewhite;
+            
         }
 
-        #api-modal{
-            position: relative;
-            height: 90px;
+        #api-key-entry{
             text-align: center;
-            background-color: bisque;
+            background-color: aqua;
+            padding: 20px;
         }
 
-        #api-modal-heading{
-            position: relative;
-            transform: translateY(20%);
+        #save-btn{
+            transform: translateY(-10%);
+            padding: 20px;
+        
         }
 
-        #api{
-            position: relative;
-            transform: translateY(10%);
+        #shield-image-container{
+            text-align: center;
+            margin-top: 20px;
+            transform: translateY(100%);
+            
         }
 
-        #api-save-btn{
-
+        #shield-img{
+            width: 100px;
         }
+
+        @media (max-width: 600px) {
+            #main-heading-container
+            #api-key-entry
+            #shield-image-container{
+                padding: 10px;
+            }
+
+            #shield-img{
+                max-width: 10px;
+            }
+            
+        }
+
     </style>
     <body>
-        <div class="container-sm" id="main-heading-container">
-            <h1>WELCOME TO WEATHER SEARCH</h1>
+        <div class="container-lg" id="main-heading-container">
+            <h2>API KEY VALIDATION</h2>
         </div>
-        <div class="container-sm" id="api-modal">
-            <h4 id="api-modal-heading">Enter your API Key</h4>
-            <input type="text" id="api-key" placeholder="API KEY">
-            <button type="button" onclick="storeApiKey()" class="btn btn-primary" id="api-save-btn">Save</button>
+        <div class="container-lg" id="api-key-entry">
+            <h3>Enter your API Key:</h3>
+            <input type="text" id="api-key">
+            <button class="btn btn-primary" id="save-btn" onclick="storeApiKey()">Save</button>
+        </div>
+        <div class="container-fluid" id="shield-image-container">
+            <img src="https://thelcogroup.com/wp-content/uploads/2019/07/lco-group-managed-cybersecurity-shield-logo.png" class="img-thumbnail" id="shield-img" alt="Image cannot be displayed"></img>
         </div>
         <script src="apiPrompt.js"></script>
     </body>
+
 </html>
