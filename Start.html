@@ -1,82 +1,91 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport", content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
-        <title>API KEY VALIDATION</title>
+        <title>API Key Validation</title>
     </head>
     <style>
 
-        #main-heading-container{
+        #heading-container{
             position: relative;
             text-align: center;
-            background-color: antiquewhite;
-            
+            background-color: salmon;
+            width: 3000px;
+            height: 60px;
         }
 
-        #api-key-entry{
+        #api-entry-container{
+            position: relative;
             text-align: center;
+            height: 100px;
             background-color: aqua;
-            padding: 10px;
+        }
+
+        #api-key-text{
+            transform: translateY(5px);
+        }
+
+        #api-key{
+            transform: translateY(20%);
         }
 
         #save-btn{
-            transform: translateY(-10%);
-            padding: 20px;
-        
+            transform: translateY(5px);
         }
 
-        #shield-image-container{
-            text-align: center;
-            margin-top: 20px;
-            transform: translateY(100%);
+        #shield-continer{
+            width: 800px;
+            height: 400px;
 
-            
         }
 
         #shield-img{
-            width: 100px;
+            height: 100px;
+            width: 120px;
+            transform: translateX(260%) translateY(170%)
         }
 
-        #save-btn{
-            margin-top: 10px;
-            width: -40px;
-            height: 10px;
+        #create-api-Key{
+            position: relative;
+            transform: translateY(-1150%);
+
+        }
         
+        #key-creation-btn{
+            transform: translateX(100%);
         }
 
-        @media (max-width: 600px) {
-            #main-heading-container
-            #api-key-entry
-            #shield-image-container{
-                padding: 5px;
-            }
-
+        @media {
+            #heading-container
+            #shield-container
+            #create-api-Key
             #shield-img{
-                max-width: 10px;
+                padding: 5%;
             }
-
-            #save-btn{
-                width: -300%
-            }
-            
         }
+
 
     </style>
     <body>
-        <div class="container-sm" id="main-heading-container">
-            <h2>API KEY VALIDATION</h2>
+        <div class="container mt-1" id="heading-container">
+            <h1 id="container-text">API KEY VALIDATION</h1>
         </div>
-        <div class="container-lg" id="api-key-entry">
-            <h3>Enter your API Key:</h3>
-            <input type="text" id="api-key">
-            <button class="btn btn-primary btn-sm" id="save-btn" onclick="storeApiKey()">Save</button>
+        <div class="container" id="api-entry-container">
+            <h2 id="api-key-text">Enter your API Key</h2>
+            <input id="api-key" type="text" placeholder="API Key">
+            <button type="button" class="btn btn-success" id="save-btn" onclick="storeApiKey()">Save</button>
         </div>
-        <div class="container-fluid" id="shield-image-container">
-            <img src="https://thelcogroup.com/wp-content/uploads/2019/07/lco-group-managed-cybersecurity-shield-logo.png" class="img-thumbnail" id="shield-img" alt="Image cannot be displayed"></img>
+        <div class="container mt-5" id="shield-continer">
+            <img src="https://thelcogroup.com/wp-content/uploads/2019/07/lco-group-managed-cybersecurity-shield-logo.png" class="img-thumbnail" alt="Image cannot be displayed" id="shield-img">
         </div>
-        <script src="apiPrompt.js"></script>
-    </body>
 
+        <div class="container mt -3" id="create-api-Key">
+            <button class="btn btn-primary" id="key-creation-btn" onclick="openWeatherLink()">Create API Key</button>
+        </div>
+    </body>
+    <script src="apiPrompt.js"></script>
+    <script src="openWeatherAPI.js"></script>
 </html>
